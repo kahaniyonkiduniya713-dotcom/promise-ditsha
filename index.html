@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Promise Day Ditsha 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+  background:linear-gradient(135deg,#ff9ecf,#f472b6,#c084fc);
+  text-align:center;
+  overflow-x:hidden;
+  color:white;
+}
+
+.page{
+  display:none;
+  min-height:100vh;
+  padding:40px 20px;
+}
+
+.active{display:block;}
+
+h1{font-size:2rem;}
+p{font-size:1.1rem;}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  margin:10px;
+  font-size:1rem;
+  cursor:pointer;
+  background:white;
+  color:#db2777;
+  font-weight:bold;
+  transition:.3s;
+}
+
+button:hover{transform:scale(1.1);}
+
+#vinayBtn{
+  position:absolute;
+}
+
+.float{
+  position:fixed;
+  bottom:-20px;
+  font-size:22px;
+  animation:up 6s linear infinite;
+}
+
+@keyframes up{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2f78d3d7fd.mp3">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<h1>Happy Promise Day Ditsha 💖</h1>
+<p>
+On this Promise Day, I just want to promise something simple and real.  
+No matter how quiet you stay,  
+no matter how much you hide inside,  
+I’ll never force you to open up —  
+but I’ll always be here when you choose to. 🌸  
+
+You don’t say everything,  
+but that doesn’t mean you don’t feel deeply.  
+And I respect that about you.
+</p>
+
+<button onclick="go(2)">Continue 🌷</button>
+</div>
+
+<!-- PAGE 2 FUN QUESTION -->
+<div class="page" id="page2">
+<h1>Little Fun Question 😄</h1>
+
+<p>Between us… who eats more brain? 🤭</p>
+
+<button id="vinayBtn" onmouseover="moveVinay()">Vinay 😎</button>
+<button onclick="go(3)">Ditsha 😌</button>
+</div>
+
+<!-- PAGE 3 FRIEND PROMISE -->
+<div class="page" id="page3">
+<h1>Official Promise Accepted 💕</h1>
+
+<p>
+I promise to:
+<br>✔ Respect your space  
+<br>✔ Make you smile on tough days  
+<br>✔ Support your dreams  
+<br>✔ Stay genuine with you  
+<br><br>
+Maybe I’m not perfect,  
+but my intentions with you are always pure.
+</p>
+
+<button onclick="go(4)">Special Surprise 💜</button>
+</div>
+
+<!-- PAGE 4 BTS SURPRISE -->
+<div class="page" id="page4">
+<h1>💜 A Special Message 💜</h1>
+
+<img src="https://i.ibb.co/fYz6nnsy/7b799a9b84b01d9d341acdb8e40f8435.jpg"
+style="width:250px; border-radius:15px; margin-top:15px;">
+
+<p style="margin-top:20px;">
+Hi Ditsha, this is Taehyung 😊  
+I heard you’ve been missing me a lot  
+and that you’re one of my biggest fans.  
+
+Don’t worry… one day we’ll definitely meet.  
+We’ll take lots of photos together,  
+laugh a lot, and make it a moment you’ll never forget. 📸✨  
+
+Until then, keep smiling,  
+keep believing in yourself,  
+and stay strong, ARMY 💜  
+
+Happy Promise Day!
+</p>
+
+</div>
+
+<script>
+function go(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+}
+
+function moveVinay(){
+  let btn=document.getElementById("vinayBtn");
+  btn.style.top=Math.random()*300+"px";
+  btn.style.left=Math.random()*300+"px";
+}
+
+setInterval(()=>{
+  let el=document.createElement("div");
+  el.className="float";
+  let arr=["🌸","🍬","🧸","💖","💜"];
+  el.innerHTML=arr[Math.floor(Math.random()*arr.length)];
+  el.style.left=Math.random()*100+"vw";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),6000);
+},400);
+</script>
+
+</body>
+</html>
