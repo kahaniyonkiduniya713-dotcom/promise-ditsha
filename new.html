@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ditsha Special 💜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ff9ecf,#c084fc);
+  text-align:center;
+  overflow:hidden;
+  color:white;
+}
+
+.page{
+  display:none;
+  min-height:100vh;
+  padding:40px 20px;
+}
+
+.active{display:block;}
+
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:25px;
+  margin:10px;
+  font-size:1rem;
+  cursor:pointer;
+  background:white;
+  color:#db2777;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+#vinayBtn{
+  position:absolute;
+}
+
+.float{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:up 6s linear infinite;
+}
+
+@keyframes up{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+setInterval(()=>{
+ let h=document.createElement("div");
+ h.className="float";
+ h.innerHTML="💖";
+ h.style.left=Math.random()*100+"vw";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+},700);
+</script>
+
+<div class="page active" id="page1">
+<h1>Hey Ditsha 💜</h1>
+<p>I made something small for you. Read slowly 😌</p>
+<button onclick="go(2)">Continue</button>
+</div>
+
+<div class="page" id="page2">
+<h1>A Small Promise 🧸</h1>
+<img src="https://i.ibb.co/bM8hbyHk/1770821247795.png"
+style="width:240px;border-radius:15px;margin-top:20px;">
+<p style="margin-top:20px;">
+Not every promise needs loud words.  
+Sometimes staying genuine is enough.
+</p>
+<button onclick="go(3)">Next</button>
+</div>
+
+<div class="page" id="page3">
+<h1>Who Eats More Brain? 😏</h1>
+<button id="vinayBtn" onclick="runAway()">Vinay 😎</button>
+<button onclick="go(4)">Ditsha 😌</button>
+</div>
+
+<div class="page" id="page4">
+<h1>💜 Special Surprise 💜</h1>
+<img src="https://i.ibb.co/fYz6nnsy/7b799a9b84b01d9d341acdb8e40f8435.jpg"
+style="width:220px;border-radius:15px;margin-top:20px;">
+<p style="margin-top:20px;">
+Hi Ditsha, this is Taehyung 💜  
+One day we’ll meet and take lots of photos together 📸  
+Until then, keep shining.
+</p>
+<h2>Happy Promise Day 🌸</h2>
+</div>
+
+<script>
+function go(n){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('page'+n).classList.add('active');
+}
+
+function runAway(){
+ let btn=document.getElementById("vinayBtn");
+ btn.style.top=Math.random()*70+"%";
+ btn.style.left=Math.random()*70+"%";
+}
+</script>
+
+</body>
+  </html>
