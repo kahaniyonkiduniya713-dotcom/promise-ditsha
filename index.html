@@ -2,16 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Happy Promise Day Ditsha 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promise For Ditsha 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Comic Sans MS', cursive;
+  font-family:'Poppins', sans-serif;
   background:linear-gradient(135deg,#ff9ecf,#f472b6,#c084fc);
+  overflow:hidden;
   text-align:center;
-  overflow-x:hidden;
   color:white;
 }
 
@@ -23,23 +25,27 @@ body{
 
 .active{display:block;}
 
-h1{font-size:2rem;}
-p{font-size:1.1rem;}
+h1{
+  font-family:'Pacifico', cursive;
+  font-size:2.2rem;
+}
 
 button{
-  padding:12px 22px;
+  padding:12px 25px;
   border:none;
   border-radius:30px;
-  margin:10px;
+  margin:15px;
   font-size:1rem;
   cursor:pointer;
   background:white;
   color:#db2777;
   font-weight:bold;
-  transition:.3s;
+  transition:0.3s;
 }
 
-button:hover{transform:scale(1.1);}
+button:hover{
+  transform:scale(1.1);
+}
 
 #vinayBtn{
   position:absolute;
@@ -56,107 +62,121 @@ button:hover{transform:scale(1.1);}
   0%{transform:translateY(0);opacity:1;}
   100%{transform:translateY(-110vh);opacity:0;}
 }
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2f78d3d7fd.mp3">
-</audio>
+<!-- Floating Hearts -->
+<script>
+setInterval(()=>{
+ let h=document.createElement("div");
+ h.className="float";
+ h.innerHTML="💖";
+ h.style.left=Math.random()*100+"vw";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+},600);
+</script>
 
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
-<h1>Happy Promise Day Ditsha 💖</h1>
+<h1>Wait… Don’t Scroll Yet 💜</h1>
 <p>
-On this Promise Day, I just want to promise something simple and real.  
-No matter how quiet you stay,  
-no matter how much you hide inside,  
-I’ll never force you to open up —  
-but I’ll always be here when you choose to. 🌸  
-
-You don’t say everything,  
-but that doesn’t mean you don’t feel deeply.  
-And I respect that about you.
+I didn’t want to send just a normal text today.  
+So I made something a little different for you.  
+Before you continue — promise me you’ll read slowly 😌
 </p>
-
-<button onclick="go(2)">Continue 🌷</button>
+<button onclick="go(2)">Tap Slowly 💖</button>
 </div>
 
-<!-- PAGE 2 FUN QUESTION -->
+<!-- PAGE 2 -->
 <div class="page" id="page2">
-<h1>Little Fun Question 😄</h1>
+<h1>A Small Promise Moment 🧸</h1>
 
-<p>Between us… who eats more brain? 🤭</p>
-
-<button id="vinayBtn" onmouseover="moveVinay()">Vinay 😎</button>
-<button onclick="go(3)">Ditsha 😌</button>
-</div>
-
-<!-- PAGE 3 FRIEND PROMISE -->
-<div class="page" id="page3">
-<h1>Official Promise Accepted 💕</h1>
-
-<p>
-I promise to:
-<br>✔ Respect your space  
-<br>✔ Make you smile on tough days  
-<br>✔ Support your dreams  
-<br>✔ Stay genuine with you  
-<br><br>
-Maybe I’m not perfect,  
-but my intentions with you are always pure.
-</p>
-
-<button onclick="go(4)">Special Surprise 💜</button>
-</div>
-
-<!-- PAGE 4 BTS SURPRISE -->
-<div class="page" id="page4">
-<h1>💜 A Special Message 💜</h1>
-
-<img src="https://i.ibb.co/fYz6nnsy/7b799a9b84b01d9d341acdb8e40f8435.jpg"
-style="width:250px; border-radius:15px; margin-top:15px;">
+<img src="https://i.ibb.co/bM8hbyHk/1770821247795.png"
+style="width:260px;margin-top:20px;border-radius:20px;
+box-shadow:0 0 30px rgba(255,255,255,0.6);
+animation:float 3s ease-in-out infinite;">
 
 <p style="margin-top:20px;">
-Hi Ditsha, this is Taehyung 😊  
-I heard you’ve been missing me a lot  
-and that you’re one of my biggest fans.  
-
-Don’t worry… one day we’ll definitely meet.  
-We’ll take lots of photos together,  
-laugh a lot, and make it a moment you’ll never forget. 📸✨  
-
-Until then, keep smiling,  
-keep believing in yourself,  
-and stay strong, ARMY 💜  
-
-Happy Promise Day!
+Not every promise needs big words.  
+Sometimes loyalty is quiet… but real.  
+Today I just promise — I’ll stay genuine with you.
 </p>
 
+<button onclick="go(3)">Next 😌</button>
+</div>
+
+<!-- PAGE 3 QUIZ -->
+<div class="page" id="page3">
+<h1>Important Question 😏</h1>
+<p>Who eats more brain? 🧠</p>
+
+<button id="vinayBtn" onclick="runAway()">Vinay 😎</button>
+<button id="ditshaBtn" onclick="correct()">Ditsha 😌</button>
+</div>
+
+<!-- PAGE 4 SECOND QUIZ -->
+<div class="page" id="page4">
+<h1>Second Question 😄</h1>
+<p>Who stays silent but feels everything?</p>
+
+<button onclick="go(5)">Ditsha 🌸</button>
+<button onclick="alert('Nope 😌')">Vinay 😂</button>
+</div>
+
+<!-- PAGE 5 SURPRISE -->
+<div class="page" id="page5">
+<h1 style="color:#fff;">💜 A Special Message 💜</h1>
+
+<img src="https://i.ibb.co/fYz6nnsy/7b799a9b84b01d9d341acdb8e40f8435.jpg"
+style="width:220px;border-radius:20px;margin-top:15px;
+box-shadow:0 0 40px #a855f7;">
+
+<p style="margin-top:20px;">
+Hi Ditsha, this is Taehyung 💜  
+I heard you're one of my biggest fans.  
+Don’t worry — one day we’ll meet,  
+take lots of photos, and laugh together.  
+Until then, keep shining and smiling.
+</p>
+
+<h2 style="margin-top:20px;">Happy Promise Day 🌸</h2>
 </div>
 
 <script>
 function go(n){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page'+n).classList.add('active');
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('page'+n).classList.add('active');
 }
 
-function moveVinay(){
-  let btn=document.getElementById("vinayBtn");
-  btn.style.top=Math.random()*300+"px";
-  btn.style.left=Math.random()*300+"px";
+let vinaySize=1;
+let ditshaSize=1;
+
+function runAway(){
+ let btn=document.getElementById("vinayBtn");
+ btn.style.top=Math.random()*70+"%";
+ btn.style.left=Math.random()*70+"%";
+
+ vinaySize-=0.1;
+ if(vinaySize>0.4){
+   btn.style.transform="scale("+vinaySize+")";
+ }
+
+ ditshaSize+=0.1;
+ document.getElementById("ditshaBtn").style.transform="scale("+ditshaSize+")";
 }
 
-setInterval(()=>{
-  let el=document.createElement("div");
-  el.className="float";
-  let arr=["🌸","🍬","🧸","💖","💜"];
-  el.innerHTML=arr[Math.floor(Math.random()*arr.length)];
-  el.style.left=Math.random()*100+"vw";
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(),6000);
-},400);
+function correct(){
+ go(4);
+}
 </script>
 
 </body>
